@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in posts %}
+<h2>{{ post.bookid }}</h2>
+<p>{{ post.booklist }}</p>
+{% endfor %}
+{% endblock %}
