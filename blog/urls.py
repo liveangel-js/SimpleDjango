@@ -22,3 +22,8 @@ urlpatterns += patterns('blog.views',
                         (r'^commonview1/$',commonviews(view1)),
                         url(r'^commonview2/$',commonviews(view2)),
                         )
+
+urlpatterns += patterns('',
+                        url(r'^add/$', add, name='add'),
+                        url(r'^add/(\d+)/(\d+)/$', add2, name='add2'),
+                        )

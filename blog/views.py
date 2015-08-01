@@ -28,6 +28,16 @@ def view2(request):
 def views(request,template_name):
     return render_to_response(template_name)
 
+def add(request):
+    a = request.GET['a']
+    b = request.GET['b']
+    c = int(a)  + int(b)
+
+    return HttpResponse(str(c))
+
+def add2(request,a,b):
+    c = int(a) + int(b)
+    return HttpResponse(str(c))
 
 #在每个视图渲染前，进行公共处理的函数
 def commonviews(func):
