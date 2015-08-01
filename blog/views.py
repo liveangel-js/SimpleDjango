@@ -28,6 +28,7 @@ def view2(request):
 def views(request,template_name):
     return render_to_response(template_name)
 
+#处理GET请求
 def add(request):
     a = request.GET['a']
     b = request.GET['b']
@@ -35,6 +36,7 @@ def add(request):
 
     return HttpResponse(str(c))
 
+#增加http://127.0.0.1:8000/blog/add/4/7/ 这种访问方式
 def add2(request,a,b):
     c = int(a) + int(b)
     return HttpResponse(str(c))
