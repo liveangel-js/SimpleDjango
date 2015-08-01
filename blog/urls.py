@@ -19,7 +19,7 @@ urlpatterns += patterns('blog.views',
                         )
 #渲染VIEW前先进行公共处理，如权限检测，安全控制
 urlpatterns += patterns('blog.views',
-                        (r'^commonview1/$',commonviews(view1)),
+                        url(r'^commonview1/$',commonviews(view1)),
                         url(r'^commonview2/$',commonviews(view2)),
                         )
 
