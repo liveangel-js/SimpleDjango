@@ -23,6 +23,23 @@ urlpatterns += patterns('blog.views',
                         url(r'^commonview2/$',commonviews(view2)),
                         )
 
+"""
+#url name参数作用
+使用
+>>> reverse('add2', args=(44,5555))
+u'/blog/add/44/5555/'
+获得URL的地址，避免了硬编码
+
+在模板中的使用
+不带参数的：
+{% url 'name' %}
+带参数的：参数可以是变量名
+{% url 'name' 参数 %}
+
+<a href="{% url 'add2' 4 5 %}">link</a>
+等同
+<a href="/add/4/5/">link</a>
+"""
 urlpatterns += patterns('',
                         url(r'^add/$', add, name='add'),
                         url(r'^add/(\d+)/(\d+)/$', add2, name='add2'),
