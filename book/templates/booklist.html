@@ -1,0 +1,38 @@
+<html>
+<style type="text/css">
+    body { color: #efd; background: #453; padding: 0 5em; margin: 0}
+    h1 { padding: 2em 1em; background: #675}
+    h2 { color: #bf8; border-top: 1px dotted #fff; margin-top: 2em}
+    p {margin: 1em 0 }
+</style>
+
+<body>
+<h1>
+    Here is book list
+</h1>
+    {% for book in books %}
+    <h2>Title: {{ book.title }}</h2>
+
+        <p>Publisher : {{ book.publisher }}</p>
+        <p>Count : {{ bcount }}</p>
+    {% endfor %}
+
+<h1>
+    Here is author list
+    {% for author in authors %}
+        <h2>Name : {{ author.name }}</h2>
+        <p>QQ : {{ author.qq }}</p>
+    {% endfor %}
+</h1>
+
+<h1>
+    Here is publisher list
+    {% for publisher in publishers %}
+        <h2>Name : {{ publisher.name }}</h2>
+        <p>Address : {{ publisher.address }}</p>
+        <p>City : {{ publisher.city }}</p>
+        <p>Country :    {{ publisher.country }}</p>
+    {% endfor %}
+</h1>
+</body>
+</html>
