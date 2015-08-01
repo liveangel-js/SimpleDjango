@@ -27,6 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#memcache
+#CACHE_BACKEND = 'memcache://127.0.0.1:12111'
+
+# database cache; use commond manage.py createcachetable mycachename
+CACHE_BACKEND = 'db://mycache'
+
+# file cache
+CACHE_BACKEND = 'file///usr/local/tmp'
 
 # Application definition
 
