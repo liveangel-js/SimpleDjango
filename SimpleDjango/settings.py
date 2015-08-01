@@ -59,6 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.gzip.GZipMiddleware',
+    'book.myMiddleware.MyMiddleware'
 )
 
 ROOT_URLCONF = 'SimpleDjango.urls'
