@@ -7,7 +7,10 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from book.models import *
 from django.core.cache import cache
+#缓存视图的装饰器
+from django.views.decorators.cache import cache_page
 
+@cache_page(60*15)
 def booklist(request):
     if cache.get('book'):
         books = cache.get('book')
