@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <title>欢迎光临南京大学</title>
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
+
+</head>
+<body>
+<div id="list">学习</div>
+<div id="dict"></div>
+</body>
+<script type="text/javascript">
         var List = {{ List|safe }};
         var Dict = {{ Dict|safe }};
 
@@ -40,9 +46,4 @@
         }
 
     </script>
-</head>
-<body>
-<div id="list">学习</div>
-<div id="dict"></div>
-</body>
 </html>

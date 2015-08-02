@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^book/', include('book.urls')),
     url(r'^JsonPractice/', include('JsonPractice.urls')),
+    url(r'^simpleform/', include('simpleform.urls')),
 ]
