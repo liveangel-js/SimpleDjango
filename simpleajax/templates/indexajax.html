@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>请输入两个数字</p>
+<form action="/add/" method="get">
+    a: <input type="text" id="a" name="a"> <br>
+    b: <input type="text" id="b" name="b"> <br>
+    <p>result: <span id='result'></span></p>
+    <button type="button" id='sum'>提交</button>
+    <button type="button" id='show'>查看内容</button>
+</form>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#sum").click(function(){
+        var a = $("#a").val();
+        var b = $("#b").val();
+
+        $.get("{% url 'add' %}",{'a':a,'b':b}, function(ret, status){
+            $('#result').html(ret + status)
+        })
+      });
+
+        $("#show").click(function(){
+            var resultval = $("#result").val();
+            var resulthtml = $("#result").html();
+           alert("val:" + resultval+"\nresulthtml:"+resulthtml);
+        });
+    });
+</script>
+</body>
+</html>
