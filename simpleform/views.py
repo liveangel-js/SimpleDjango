@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.utils.translation import ugettext  as _
 
 # Create your views here.
 """
@@ -9,7 +10,8 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'index.html')
 
-
+def i18n(request):
+    return HttpResponse(_(u'Invalid Captcha'))
 
 def add(request):
     a = request.GET['a']

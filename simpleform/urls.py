@@ -9,4 +9,5 @@ urlpatterns = patterns('',
                        url(r'^$', index),
                        url(r'^add/$', add, name='add'),
                        url(r'^djangoform/$', djangoform),
+                       url(r'^i18n/$', i18n)
                        )

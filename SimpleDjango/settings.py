@@ -65,7 +65,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.gzip.GZipMiddleware',
-    'book.myMiddleware.MyMiddleware'
+    'book.myMiddleware.MyMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'SimpleDjango.urls'
@@ -81,6 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -98,6 +100,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+#python 国际化
+LANGUAGES = (
+    ('en', ('English')),
+    ('zh-cn', ('中文简体')),
+    ('zh-tw', ('中文繁體')),
+)
+
+#翻译文件所在目录，需要手工创建
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+TEMPLATE_CONTEXT_PROCESSORS = ("django.core.context_processors.i18n",)
+
+
 
 
 # Internationalization
