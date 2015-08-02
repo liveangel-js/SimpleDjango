@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """SimpleDjango URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,11 +16,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+    #用户注册系统
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls')),
     url(r'^book/', include('book.urls')),
     url(r'^JsonPractice/', include('JsonPractice.urls')),
     url(r'^simpleform/', include('simpleform.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ]

@@ -38,8 +38,10 @@ CACHE_BACKEND = 'db://mycache'
 CACHE_BACKEND = 'file///usr/local/tmp'
 
 # Application definition
-
+#用户注册系统
 INSTALLED_APPS = (
+    'registration',
+    'registration_email',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,3 +132,18 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"
 )
+
+
+#用户注册的系统
+
+ACCOUNT_ACTIVATION_DAYS = 7 # 激活期限
+
+AUTHENTICATION_BACKENDS = (
+    'registration_email.auth.EmailBackend',
+)
+# NOTICE:not work `lambda request, user: '/'`
+LOGIN_REDIRECT_URL = '/'#登陆成功后跳转的网址
+
+# NOTICE:not work only '/accounts/activate/complete/'
+REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL = lambda request, user: '/accounts/activate/complete/'
+REGISTRATION_EMAIL_REGISTER_SUCCESS_URL = lambda request, user: '/accounts/register/complete/'
