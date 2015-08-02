@@ -101,6 +101,13 @@ DATABASES = {
     }
 }
 #python 国际化
+"""
+生成需要翻译的文件
+django-admin.py makemessages -l zh-cn
+django-admin.py makemessages -l zh-tw
+手工翻译 locale 中的文本后，我们需要编译一下，这样翻译才会生效
+django-admin.py compilemessages
+"""
 LANGUAGES = (
     ('en', ('English')),
     ('zh-cn', ('中文简体')),
