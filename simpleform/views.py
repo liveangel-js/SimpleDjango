@@ -11,6 +11,8 @@ def index(request):
     return render(request, 'index.html')
 
 def i18n(request):
+    print request.session.session_key
+    print request.session.get(request.session.session_key)
     return HttpResponse(_(u'Invalid Captcha'))
 
 def add(request):
@@ -37,4 +39,35 @@ def djangoform(request):
     else:# 当正常访问时
         form = AddForm()
     return render(request, 'djangoform.html', {'form': form})
+
+"""
+Session示例
+比如写一个不让用户评论两次的应用：
+"""
+def post_comment(request):
+    if request.session.get('has_commented', False):
+        return HttpResponse("You've already commented.")
+    request.session['has_commented'] = True
+    return HttpResponse('Thanks for your comment!')
+
+"""
+Session示例
+一个简化的登陆认证：
+"""
+def login(request):
+    id = 1
+    password = 2
+    if password == int(request.GET['password']):
+        request.session['member_id'] = id
+        return HttpResponse("You're logged in.")
+    else:
+        return HttpResponse("Your username and password didn't match.")
+
+
+def logout(request):
+    try:
+        del request.session['member_id']
+    except KeyError:
+        pass
+    return HttpResponse("You're logged out.")
 
