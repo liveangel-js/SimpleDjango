@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'blog',
     'book',
     'JsonPractice',
+    'diyfield',
 )
 
 MIDDLEWARE_CLASSES = (
