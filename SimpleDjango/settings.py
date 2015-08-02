@@ -26,7 +26,7 @@ SECRET_KEY = '^@!45dr4n7kz&o(6lt$3i9(v@40mj#=e!7sy%_4#f7*_=4t0n^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #memcache
 #CACHE_BACKEND = 'memcache://127.0.0.1:12111'
