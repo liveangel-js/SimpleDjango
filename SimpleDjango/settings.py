@@ -122,7 +122,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 # jquery.js 放在 common_static/js/ 下，这样就可以 在 /static/js/jquery.js 中访问到它！
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "common_static"),
-    '/path/to/others/static/',
+
 )
 
 # 这个是默认设置，默认会找 STATICFILES_DIRS 中所有文件夹和各app下的 static 文件夹
