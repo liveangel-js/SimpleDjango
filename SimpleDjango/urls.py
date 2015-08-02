@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^JsonPractice/', include('JsonPractice.urls')),
     url(r'^simpleform/', include('simpleform.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^simpleajax/', include('simpleajax.urls'))
 ]

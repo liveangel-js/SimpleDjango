@@ -33,3 +33,6 @@ def ajaxshow(request):
         request.session['times'] = 0
 
     return render(request, 'indexajaxlist.html')
+
+def ajaxcsrf(request):
+    return render(request, 'ajaxcsrf.html')

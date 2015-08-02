@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'JsonPractice',
     'diyfield',
     'simpleform',
+    'simpleajax'
 )
 
 MIDDLEWARE_CLASSES = (

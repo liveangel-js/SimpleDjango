@@ -9,6 +9,7 @@ urlpatterns = patterns('',
                        url(r'^$', index),
                        url(r'^ajax_list/$', ajax_list, name='ajax-list'),
                        url(r'^ajax_dict/$', ajax_dict, name='ajax-dict'),
-                       url(r'^ajaxshow/$', ajaxshow)
+                       url(r'^ajaxshow/$', ajaxshow),
+                       url(r'^ajaxcsrf/$', ajaxcsrf)
 
                        )
