@@ -53,7 +53,8 @@ INSTALLED_APPS = (
     'JsonPractice',
     'diyfield',
     'simpleform',
-    'simpleajax'
+    'simpleajax',
+    'CustomizeModule'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +69,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
     'book.myMiddleware.MyMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'CustomizeModule.middleware.CustomizeMiddleware'
 )
 
 ROOT_URLCONF = 'SimpleDjango.urls'

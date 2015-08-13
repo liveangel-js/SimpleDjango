@@ -12,6 +12,11 @@ def archive(request):
     posts = BlogPost.objects.all()
     t = loader.get_template("archive.html")
     c = Context({'posts': posts})
+    name = "Hi I am session"
+    print name
+    request.session["name"]=name
+    request.session["process_view"]="dd"
+    print __name__+"Set Session:"+name
     return HttpResponse(t.render(c))
 
 def new_archive(request):
@@ -27,6 +32,11 @@ def view2(request):
 
 def views(request,template_name):
     return render_to_response(template_name)
+
+def session(request):
+    name = request.session["name"]
+    process = request.session["process_view"]
+    return HttpResponse(name+"::"+process)
 
 #处理GET请求
 def add(request):

@@ -11,6 +11,8 @@ urlpatterns = patterns('',
 
 urlpatterns +=patterns('',
                        url(r'^new_archive$', new_archive),
+
+
                        )
 
 urlpatterns += patterns('blog.views',
@@ -22,6 +24,12 @@ urlpatterns += patterns('blog.views',
                         url(r'^commonview1/$',commonviews(view1)),
                         url(r'^commonview2/$',commonviews(view2)),
                         )
+
+#增加session记录
+urlpatterns +=patterns('',
+                       url(r'^login$', archive),
+                       url(r'^session$', session)
+                       )
 
 """
 #url name参数作用
