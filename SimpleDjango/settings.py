@@ -54,7 +54,11 @@ INSTALLED_APPS = (
     'diyfield',
     'simpleform',
     'simpleajax',
-    'CustomizeModule'
+    'CustomizeModule',
+    'rest_framework',
+    'djangular',
+    'reports'
+    # 'simpleangular',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,7 +73,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
     'book.myMiddleware.MyMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'CustomizeModule.middleware.CustomizeMiddleware'
+    # 'CustomizeModule.middleware.CustomizeMiddleware'
 )
 
 ROOT_URLCONF = 'SimpleDjango.urls'
@@ -149,7 +153,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 # 其它 存放静态文件的文件夹，里面不能包含 STATIC_ROOT
 # jquery.js 放在 common_static/js/ 下，这样就可以 在 /static/js/jquery.js 中访问到它！
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "common_static"),
+    # os.path.join(BASE_DIR, "common_static"),
+    os.path.join(BASE_DIR, "common_static/bootstrap"),
+    os.path.join(BASE_DIR, "common_static/highcharts"),
+    os.path.join(BASE_DIR, "common_static/highstocks"),
+    os.path.join(BASE_DIR, "common_static/jquery"),
+
 
 )
 
@@ -173,3 +182,14 @@ LOGIN_REDIRECT_URL = '/'#登陆成功后跳转的网址
 # NOTICE:not work only '/accounts/activate/complete/'
 REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL = lambda request, user: '/accounts/activate/complete/'
 REGISTRATION_EMAIL_REGISTER_SUCCESS_URL = lambda request, user: '/accounts/register/complete/'
+
+#RESTFUL FRAMEWORK
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+# AUTH_USER_MODEL = 'simpleangular.User'

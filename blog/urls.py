@@ -52,3 +52,6 @@ urlpatterns += patterns('',
                         url(r'^add/$', add, name='add'),
                         url(r'^add/(\d+)/(\d+)/$', add2, name='add2'),
                         )
+
+urlpatterns += patterns('',
+                        url(r'^simple_angular', simple_angular, name="angular"))

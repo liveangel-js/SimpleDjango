@@ -57,3 +57,6 @@ def commonviews(func):
         #do common something
         return func
     return view
+
+def simple_angular(request):
+    return render(request,'simple_angular.html')

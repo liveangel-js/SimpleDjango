@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="/static/jquery.1.9.1.min.js"></script>
+		<link rel="stylesheet" href="/static/charts.css" type="text/css">
+        </link>
+		<script type="text/javascript" src="/static/charts.js">
+
+
+		</script>
+	</head>
+	<body>
+<script src="/static/highcharts.js"></script>
+
+<div id="result"></div>
+<table id="table-sparkline">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Income</th>
+            <th>Income per quarter</th>
+            <th>Costs</th>
+            <th>Costs per quarter</th>
+            <th>Result</th>
+            <th>Result per quarter</th>
+        </tr>
+    </thead>
+    <tbody id="tbody-sparkline">
+        <tr>
+            <th>Alabama</th>
+            <td>254</td>
+            <td data-sparkline="71, 78, 39, 66 "/>
+            <td>296</td>
+            <td data-sparkline="68, 52, 80, 96 "/>
+            <td>-42</td>
+            <td data-sparkline="3, 26, -41, -30 ; column"/>
+        </tr>
+        <tr>
+            <th>Alaska</th>
+            <td>246</td>
+            <td data-sparkline="87, 44, 74, 41 "/>
+            <td>181</td>
+            <td data-sparkline="29, 54, 73, 25 "/>
+            <td>65</td>
+            <td data-sparkline="58, -10, 1, 16 ; column"/>
+        </tr>
+        <tr>
+            <th>Arizona</th>
+            <td>101</td>
+            <td data-sparkline="56, 12, 8, 25 "/>
+            <td>191</td>
+            <td data-sparkline="69, 14, 53, 55 "/>
+            <td>-90</td>
+            <td data-sparkline="-13, -2, -45, -30 ; column"/>
+        </tr>
+        <tr>
+            <th>Arkansas</th>
+            <td>303</td>
+            <td data-sparkline="81, 50, 78, 94 "/>
+            <td>76</td>
+            <td data-sparkline="36, 15, 14, 11 "/>
+            <td>227</td>
+            <td data-sparkline="45, 35, 64, 83 ; column"/>
+        </tr>
+
+    </tbody>
+</table>
+	</body>
+</html>

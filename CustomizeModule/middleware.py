@@ -36,9 +36,9 @@ class CustomizeMiddleware(object):
     def process_exception(self):
         print "hello process exception"
 
-    def process_template_response(self, request, response):
-        print "hello process template"
-        # return
+    # def process_template_response(self, request, response):
+    #     print "hello process template"
+    #     # return
 
     def process_response(self, request, response):
         print "hello process response"
